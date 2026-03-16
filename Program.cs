@@ -6,29 +6,29 @@ using System.Threading.Tasks;
 
 namespace GenericCollection
 {
+    class student
+    {
+        public int id;
+        public string name;
+    }
     internal class Program
     {
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hoten: Nguyen Trong Nhan");
             Console.WriteLine("MSV: 23115053122125");
-            Console.WriteLine("Bai tap 10: Tim phan tu nho nhat");
-            List<int> ints = new List<int>() { 20, 11, 7, 67, 59 };
-            Console.WriteLine("Danh sach cac phan tu: ");
-            foreach (int i in ints)
+            Console.WriteLine("Bai tap 11: Luu danh sach sinh vien");
+            List<student> students = new List<student>();
+            students.Add(new student() { id = 1, name = "Nguyen Trong Nhan" });
+            students.Add(new student() { id = 2, name = "Do Ngoc Hoang Anh" });
+            students.Add(new student() { id = 3, name = "Nguyen Long Nhat" });
+            foreach (student s in students)
             {
-                Console.Write(i + " ");
-            }
-            int min = ints[0];
-            for (int i = 1; i < ints.Count; i++)
-            {
-                if (ints[i] < min)
-                {
-                    min = ints[i];
-                }
-            }
-            Console.WriteLine("\nPhan tu nho nhat la: " + min);
+                Console.WriteLine("ID: {0}, Name: {1}", s.id, s.name);
 
+            }
+            Console.ReadLine();
         }
-        }
+    }
 }
