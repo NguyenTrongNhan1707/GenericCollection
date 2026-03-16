@@ -18,30 +18,28 @@ namespace GenericCollection
         {
             Console.WriteLine("Hoten: Nguyen Trong Nhan");
             Console.WriteLine("MSV: 23115053122125");
-            Console.WriteLine("Bai tap 15: Su dung Dictionary");
-            Dictionary<String, string> dict = new Dictionary<String, string>
+            Console.WriteLine("Bai tap 16: Dem so lan xuat hien");
+            Console.WriteLine("Nhap chuoi: ");
+            string str = Console.ReadLine();
+            Dictionary<char, int> dict = new Dictionary<char, int>();
+            foreach (char c in str)
             {
-                {"hello", "xin chao"},
-                {"goodbye", "tam biet"},
-                {"thank you", "cam on"},
-                {"sorry", "xin loi"}
-            };
-            Console.WriteLine("Tu dien hien tai co cac tu sau:");
-            foreach (var item in dict)
-            {
-                Console.WriteLine(item.Key);
-            }
-                Console.WriteLine("Nhap tu can dich:");
-                string input = Console.ReadLine();
-                if (dict.ContainsKey(input))
+                if (dict.ContainsKey(c))
                 {
-                    Console.WriteLine("Nghia cua tu '{0}' la: {1}", input, dict[input]);
+                    dict[c]++;
                 }
                 else
                 {
-                    Console.WriteLine("Tu '{0}' khong co trong tu dien.", input);
+                    dict[c] = 1;
+                }
             }
-                Console.ReadLine();
+            Console.WriteLine("So lan xuat hien cua cac ky tu:");
+            foreach (var kvp in dict)
+            {
+                Console.WriteLine($"Ky tu '{kvp.Key}': {kvp.Value} lan");
+            }
+            Console.ReadLine();
+
         }
-    }
+        }
 }
