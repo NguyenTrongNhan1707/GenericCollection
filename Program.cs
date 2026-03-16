@@ -18,28 +18,22 @@ namespace GenericCollection
         {
             Console.WriteLine("Hoten: Nguyen Trong Nhan");
             Console.WriteLine("MSV: 23115053122125");
-            Console.WriteLine("Bai tap 16: Dem so lan xuat hien");
-            Console.WriteLine("Nhap chuoi: ");
-            string str = Console.ReadLine();
-            Dictionary<char, int> dict = new Dictionary<char, int>();
-            foreach (char c in str)
+            Console.WriteLine("Bai tap 17: Tim phan tu xuat hien nhieu nhat");
+            List<int> ints = new List<int>();
+            Console.WriteLine("Nhap so luong phan tu: ");
+            int n = int.Parse(Console.ReadLine());
+            for (int i = 0; i < n; i++)
             {
-                if (dict.ContainsKey(c))
-                {
-                    dict[c]++;
-                }
-                else
-                {
-                    dict[c] = 1;
-                }
+                Console.WriteLine("Nhap phan tu thu " + (i + 1) + ": ");
+                int x = int.Parse(Console.ReadLine());
+                ints.Add(x);
             }
-            Console.WriteLine("So lan xuat hien cua cac ky tu:");
-            foreach (var kvp in dict)
-            {
-                Console.WriteLine($"Ky tu '{kvp.Key}': {kvp.Value} lan");
-            }
+            var mostFrequent = ints.GroupBy(x => x)
+                                   .OrderByDescending(g => g.Count())
+                                   .First()
+                                   .Key;
+            Console.WriteLine("Phan tu xuat hien nhieu nhat: " + mostFrequent + " So lan xuat hien: " + ints.Count(x => x == mostFrequent));
             Console.ReadLine();
-
         }
-        }
+    }
 }
