@@ -12,28 +12,23 @@ namespace GenericCollection
         {
             Console.WriteLine("Hoten: Nguyen Trong Nhan");
             Console.WriteLine("MSV: 23115053122125");
-            Console.WriteLine("Bai tap 5: Xoa phan tu khoi List");
-            List<string> list = new List<string> { string.Empty, "Nhan", "Van", "Ly", "Tinh", "Nhat" };
-            Console.WriteLine("Danh sach truoc khi xoa:");
-            foreach (string item in list)
+            Console.WriteLine("Bai tap 6: Kiem tra phan tu yeu cau");
+            List<String> list = new List<string> { "Nhan", "Anh yeu em", "Ly", "Vip", "Hello" };
+            Console.WriteLine("Danh sach phan tu trong list: ");
+            foreach (String elements in list)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(elements);
             }
-            list.Remove(string.Empty);
-            Console.WriteLine("Nhap vao ten can xoa:");
-            string nameToRemove = Console.ReadLine();
-            if (list.Remove(nameToRemove))
+            Console.WriteLine("Nhap phan tu can kiem tra: ");
+            String element = Console.ReadLine();
+            if (list.Contains(element))
             {
-                Console.WriteLine($"Da xoa {nameToRemove} khoi danh sach.");
+                Console.WriteLine("Phan tu {0} co trong list", element);
             }
             else
             {
-                Console.WriteLine($"{nameToRemove} khong co trong danh sach.");
-            }
-            Console.WriteLine("Danh sach sau khi xoa:");
-            foreach (string item in list)
-            {
-                Console.WriteLine(item);
+                Console.WriteLine("Phan tu {0} khong co trong list", element);
+
             }
         }
     }
