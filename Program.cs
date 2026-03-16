@@ -12,26 +12,18 @@ namespace GenericCollection
         {
             Console.WriteLine("Hoten: Nguyen Trong Nhan");
             Console.WriteLine("MSV: 23115053122125");
-            Console.WriteLine("Bai tap 3: Tim so lon nhat");
-            List<int> numbers = new List<int>();
-            Console.WriteLine("Nhap so luong phan tu:");
-            int n = int.Parse(Console.ReadLine());
-            for (int i = 0; i < n; i++)
+            Console.WriteLine("Bai tap 4: Dem so chan");
+            List<int> numbers = new List<int> { 1, 2, 34, 5, 67, 8, 9, 22, 33, 44, 56 };
+            Console.WriteLine("Danh sach : " + string.Join(", ", numbers));
+            int count = 0;
+            foreach (int number in numbers)
             {
-                Console.WriteLine($"Nhap phan tu thu {i + 1}:");
-                int num = int.Parse(Console.ReadLine());
-                numbers.Add(num);
-            }
-            int max = numbers[0];
-            for (int i = 1; i < numbers.Count; i++)
-            {
-                if (numbers[i] > max)
+                if (number % 2 == 0)
                 {
-                    max = numbers[i];
+                    count++;
                 }
             }
-            Console.WriteLine($"So lon nhat trong danh sach la: {max}");
-
+            Console.WriteLine("So luong so chan la: " + count);
         }
     }
 }
